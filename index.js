@@ -11,10 +11,10 @@ app.headers = {};
 app.routes = {};
 app.routes.get = {};
 app.routes.post = {};
-app.GET = (url,callback) => {
+app.get = (url,callback) => {
     app.routes.get[url] = callback;
 };
-app.POST = (url,callback) => {
+app.post = (url,callback) => {
     app.routes.post[url] = callback;
 };
 app.listen = () => {
@@ -29,8 +29,8 @@ app.listen = () => {
                     return;
                 }
 
-                const ext = path.extname(filePath);
-                let contentType = returnContentType(ext);
+                const extens = path.extname(filePath);
+                let contentType = returnContentType(extens);
 
                 res.writeHead(200, {
                     'Content-Type': contentType
