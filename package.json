@@ -1,5 +1,5 @@
 {
-  "name": "guggy.js",
+  "name": "guggyjs",
   "version": "1.0.0",
   "description": "a web server like express but way better",
   "main": "index.js",
@@ -18,5 +18,6 @@
   "homepage": "https://github.com/bistek-studios/guggy.js#readme",
   "dependencies": {
     "return-content-type": "^1.0.1"
-  }
+  },
+  "devDependencies": {}
 }

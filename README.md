@@ -3,7 +3,7 @@
 web server
 
 ## install
-`npm i guggy.js`
+`npm i guggyjs`
 
 in javascript code:
 
