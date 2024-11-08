@@ -1,0 +1,22 @@
+{
+  "name": "guggy.js",
+  "version": "1.0.0",
+  "description": "a web server like express but way better",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bistek-studios/guggy.js.git"
+  },
+  "author": "bistek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bistek-studios/guggy.js/issues"
+  },
+  "homepage": "https://github.com/bistek-studios/guggy.js#readme",
+  "dependencies": {
+    "return-content-type": "^1.0.1"
+  }
+}
