@@ -46,6 +46,29 @@ app.listen = () => {
                 });
             });
         };
+        res.send = (data) => {
+            function isValidHtmlElement(str) {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(str, 'text/html');
+                return doc.body.children.length > 0;
+            }
+            
+            let header = "text/plain";
+
+            if (typeof data === 'object') header = "application/json";
+
+            if (isValidHtmlElement(str)) header = "text/html";
+
+            switch (header) {
+                case "application/json":
+                    res.end(JSON.stringify(str));
+                    break;
+                case "text/html":
+                case "text/plain":
+                    res.end(str);
+                    break;
+            };
+        }
         req.on('data', (data) => {
             ext.rawdata = "";
             ext.rawdata += data;
@@ -69,5 +92,9 @@ app.listen = () => {
         console.log("running server at "+`${app.hostname}:${app.port}`);
     });
 };
+
+app.get("/",(req,res)=>{
+    res.send("<h1>hey</h1>");
+});
 
 module.exports = app;
