@@ -93,8 +93,4 @@ app.listen = () => {
     });
 };
 
-app.get("/",(req,res)=>{
-    res.send("<h1>hey</h1>");
-});
-
 module.exports = app;
