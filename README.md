@@ -8,7 +8,7 @@ web server
 in javascript code:
 
 ```javascript
-const app = require("guggy.js");
+const app = require("guggyjs");
 ```
 
 ## usage

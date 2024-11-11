@@ -19,6 +19,7 @@ app.post = (url,callback) => {
 };
 app.listen = () => {
     http.createServer((req,res) => {
+        console.log(`${req.method} ${req.url}`);
         let url = req.url;
         let ext = {};
         res.send = (filePath) => {
