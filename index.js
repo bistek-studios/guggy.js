@@ -47,25 +47,18 @@ app.listen = () => {
             });
         };
         res.send = (data) => {
-            function isValidHtmlElement(str) {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(str, 'text/html');
-                return doc.body.children.length > 0;
-            }
-            
             let header = "text/plain";
 
-            if (typeof data === 'object') header = "application/json";
-
-            if (isValidHtmlElement(str)) header = "text/html";
-
+            if (data instanceof Object) header = "application/json";
+            
             switch (header) {
                 case "application/json":
-                    res.end(JSON.stringify(str));
+                    res.writeHead(200, { 'Content-Type': header });
+                    res.end(JSON.stringify(data));
                     break;
-                case "text/html":
-                case "text/plain":
-                    res.end(str);
+                default:
+                    res.writeHead(200, { 'Content-Type': header });
+                    res.end(data);
                     break;
             };
         }
@@ -94,7 +87,9 @@ app.listen = () => {
 };
 
 app.get("/",(req,res)=>{
-    res.send("<h1>hey</h1>");
+    res.send("<h1>this is my script</h1>");
 });
+
+app.listen();
 
 module.exports = app;
